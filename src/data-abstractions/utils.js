@@ -1,3 +1,12 @@
-const getGcd = (a, b) => ((a % b) ? getGcd(b, a % b) : Math.abs(b));
+const getGcd = (a, b) => {
+    const remainder = a % b;
+    // console.log('firstRemainder', remainder);
+
+    if (remainder) {
+        return getGcd(b, remainder);
+    } else {
+       return Math.abs(b);
+    }
+};
 
 export default getGcd;
